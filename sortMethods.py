@@ -66,4 +66,4 @@ def merge_sort(arr):
 arr = [12, 11, 13, 5, 6]
 merge_sort(arr)
 for i in range(len(arr)):
-	print("%d" %arr[i])
+	print(arr[i])
