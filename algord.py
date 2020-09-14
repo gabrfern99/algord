@@ -11,6 +11,8 @@ def main():
         sortMethods.selection_sort(list)
     elif(method == "3"):
         sortMethods.merge_sort(list)
+    elif(method == "4"):
+        sortMethods.quick_sort(list, 0, len(list) - 1)
     for i in range(len(list)):
         print(list[i])
 
