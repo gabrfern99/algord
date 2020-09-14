@@ -60,10 +60,28 @@ def merge_sort(arr):
 			j += 1
 			k += 1
 
+def partition(arr, low, high):
+	pivot = arr[high]
+	i = low - 1
+
+	for j in range(low, high):
+		if arr[j] < pivot:
+			i += 1
+			arr[j], arr[i] = arr[i], arr[j]
+	arr[i + 1], arr[high] = arr[high], arr[i + 1]
+	return i + 1
+
+def quick_sort(arr, low, high):
+	if low < high:
+		pivot_idx = partition(arr, low, high)
+
+		quick_sort(arr, low, pivot_idx - 1)
+		quick_sort(arr, pivot_idx + 1, high)
+	
 
 #### MAIN ####
 
-arr = [12, 11, 13, 5, 6]
-merge_sort(arr)
+arr = [ 5, 4, 3, 2, 1 ]
+quick_sort(arr, 0, len(arr) - 1)
 for i in range(len(arr)):
 	print(arr[i])
