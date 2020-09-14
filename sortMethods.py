@@ -71,3 +71,11 @@ def quick_sort(arr, low, high):
 
 		quick_sort(arr, low, pivot_idx - 1)
 		quick_sort(arr, pivot_idx + 1, high)
+
+
+### MAIN ###
+
+arr = [5, 4, 3, 2, 1]
+quick_sort(arr, 0, len(arr) - 1)
+for i in arr:
+	print(i)
