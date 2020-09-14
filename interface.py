@@ -33,3 +33,15 @@ def interface_cli():
         except UnboundLocalError:
             pass
     return path, sort_method
+
+
+def csv_parser():
+    path, method = interface_cli()
+    csv_element_list = []
+    line_count = 0
+    with open(path, "r") as f:
+        for line in f:
+            line = line.strip("\n")
+            csv_element_list.append(line)
+    f.close()
+    return csv_element_list, method
