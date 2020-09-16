@@ -4,17 +4,17 @@ import sortMethods
 import interface
 
 def main():
-    list, method = interface.csv_parser()
+    retlist, method = interface.csv_parser()
     if(method == "1"):
-        sortMethods.insertion_sort(list)
+        sortMethods.insertion_sort(retlist)
     elif(method == "2"):
-        sortMethods.selection_sort(list)
+        sortMethods.selection_sort(retlist)
     elif(method == "3"):
-        sortMethods.merge_sort(list)
+        sortMethods.merge_sort(retlist)
     elif(method == "4"):
-        sortMethods.quick_sort(list, 0, len(list) - 1)
-    for i in range(len(list)):
-        print(list[i])
+        sortMethods.quick_sort(retlist, 0, len(retlist) - 1)
+    for i in range(len(retlist)):
+        print(retlist[i])
 
 if __name__ == "__main__":
     main()
