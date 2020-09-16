@@ -2,9 +2,11 @@
 
 import sortMethods
 import interface
+import sys
 
 def main():
     retlist, method = interface.csv_parser()
+    sys.setrecursionlimit(len(retlist))
     if(method == "1"):
         sortMethods.insertion_sort(retlist)
     elif(method == "2"):
