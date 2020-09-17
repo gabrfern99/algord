@@ -5,10 +5,12 @@ def insertion_sort(arr, comps, moves):
         while i >= 0 and temp < arr[i]:
             arr[i + 1] = arr[i]
             i -= 1
-            comps += 1
-            moves += 1
-        comps += 1
+            # Inside while, will occur i = j - 1 changes
         arr[i + 1] = temp
+        # Here we have more one change
+        # j - 1 + 1 = j changes
+        moves += j 
+    comps = j
 
     return comps, moves
 
