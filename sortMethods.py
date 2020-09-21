@@ -1,14 +1,11 @@
 def insertion_sort(arr):
     for j in range(1, len(arr)):
-
         temp = arr[j]
         i = j - 1
-
         while i >= 0 and temp < arr[i]:
             arr[i + 1] = arr[i]
             i -= 1
             arr[i + 1] = temp
-
 
 def selection_sort(arr):
     for i in range(len(arr)):
@@ -38,10 +35,6 @@ def merge_sort(arr):
                 arr[k] = right[j]
                 j += 1
                 k += 1
-# It may happen the program to fill completely the first vector while the
-# second is not completely filled yet, i.e, all elements in the left vector
-# are bigger than the elements in the second.
-# To prevent the loss of elements, we do this:
 
         while i < len(left):
             arr[k] = left[i]
