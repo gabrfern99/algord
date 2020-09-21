@@ -42,6 +42,8 @@ def merge_sort(arr):
         i = j = k = 0
 
         while i < len(left) and j < len(right):
+            comps += 1
+            moves += 1
             if left[i] <= right[j]:
                 arr[k] = left[i]
                 i += 1
@@ -52,10 +54,12 @@ def merge_sort(arr):
 
         while i < len(left):
             arr[k] = left[i]
+            moves += 1
             i += 1
             k += 1
         while j < len(right):
             arr[k] = right[j]
+            moves += 1
             j += 1
             k += 1
 
@@ -69,13 +73,11 @@ def partition(arr, low, high):
         if arr[j] < pivot:
             i += 1
             arr[j], arr[i] = arr[i], arr[j]
-            comps += 1
-            moves += 2
     arr[i + 1], arr[high] = arr[high], arr[i + 1]
-    moves += 2
-    return i + 1, comps, moves
+    return i + 1
 
 def quick_sort(arr, low, high):
+    global comps, moves
     if low < high:
         pivot_idx = partition(arr, low, high)
         
