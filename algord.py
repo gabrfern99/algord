@@ -6,7 +6,7 @@ import time
 
 def main():
     retlist, method = interface.csv_parser()
-    sys.setrecursionlimit(len(retlist) + 4)
+    sys.setrecursionlimit(len(retlist))
     if(method == "1"):
         start = time.process_time()
         comps, moves = sortMethods.insertion_sort(retlist)
