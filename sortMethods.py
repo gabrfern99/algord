@@ -73,11 +73,13 @@ def partition(arr, low, high):
         if arr[j] < pivot:
             i += 1
             arr[j], arr[i] = arr[i], arr[j]
+            comps += 1
+            moves += 2
     arr[i + 1], arr[high] = arr[high], arr[i + 1]
-    return i + 1
+    moves += 2
+    return i + 1, comps, moves
 
 def quick_sort(arr, low, high):
-    global comps, moves
     if low < high:
         pivot_idx = partition(arr, low, high)
         
