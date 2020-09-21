@@ -1,3 +1,5 @@
+comps = 0
+moves = 0
 def insertion_sort(arr):
     global comps, moves
     for j in range(1, len(arr)):
@@ -80,17 +82,3 @@ def quick_sort(arr, low, high):
         quick_sort(arr, low, pivot_idx - 1)
         quick_sort(arr, pivot_idx + 1, high)
     return comps, moves
-
-
-arr = []
-comps = 0
-moves = 0
-for i in range(1000):
-    arr.append(i)
-print("%d %d\n" % selection_sort(arr))
-arr = []
-comps = 0
-moves = 0
-for i in range(1000):
-    arr.append(1000 - i)
-print("%d %d\n" % selection_sort(arr))
