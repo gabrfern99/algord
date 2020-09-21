@@ -66,20 +66,24 @@ def merge_sort(arr):
     return comps, moves
 
 def partition(arr, low, high):
+    global comps, moves
     pivot = arr[high]
     i = low - 1
 
     for j in range(low, high):
+        comps += 1
         if arr[j] < pivot:
             i += 1
             arr[j], arr[i] = arr[i], arr[j]
+            moves += 1
     arr[i + 1], arr[high] = arr[high], arr[i + 1]
-    return i + 1
+    moves += 1
+    return i + 1, comps, moves
 
 def quick_sort(arr, low, high):
     global comps, moves
     if low < high:
-        pivot_idx = partition(arr, low, high)
+        pivot_idx, comps, moves = partition(arr, low, high)
         
         quick_sort(arr, low, pivot_idx - 1)
         quick_sort(arr, pivot_idx + 1, high)
