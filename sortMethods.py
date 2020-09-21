@@ -1,4 +1,5 @@
-def insertion_sort(arr, comps, moves):
+def insertion_sort(arr):
+    global comps, moves
     for j in range(1, len(arr)):
         temp = arr[j]
         i = j - 1
@@ -11,7 +12,8 @@ def insertion_sort(arr, comps, moves):
 
     return comps, moves
 
-def selection_sort(arr, comps, moves):
+def selection_sort(arr):
+    global comps, moves
     for i in range(len(arr)):
         min_idx = i
         for j in range(i + 1, len(arr)):
@@ -24,15 +26,16 @@ def selection_sort(arr, comps, moves):
 
     return comps, moves
 
-def merge_sort(arr, comps, moves):
+def merge_sort(arr):
+    global comps, moves
     if len(arr) > 1:
         middle = len(arr) // 2
 
         left = arr[:middle]
         right = arr[middle:]
 
-        merge_sort(left, comps, moves)
-        merge_sort(right, comps, moves)
+        merge_sort(left)
+        merge_sort(right)
 
         i = j = k = 0
 
@@ -44,10 +47,6 @@ def merge_sort(arr, comps, moves):
                 arr[k] = right[j]
                 j += 1
                 k += 1
-# It may happen the program to fill completely the first vector while the
-# second is not completely filled yet, i.e, all elements in the left vector
-# are bigger than the elements in the second.
-# To prevent the loss of elements, we do this:
 
         while i < len(left):
             arr[k] = left[i]
@@ -60,7 +59,7 @@ def merge_sort(arr, comps, moves):
 
     return comps, moves
 
-def partition(arr, low, high, comps, moves):
+def partition(arr, low, high):
     pivot = arr[high]
     i = low - 1
 
@@ -74,10 +73,24 @@ def partition(arr, low, high, comps, moves):
     moves += 2
     return i + 1, comps, moves
 
-def quick_sort(arr, low, high, comps, moves):
+def quick_sort(arr, low, high):
     if low < high:
-        pivot_idx, comps, moves = partition(arr, low, high, comps, moves)
+        pivot_idx = partition(arr, low, high)
         
-        quick_sort(arr, low, pivot_idx - 1, comps, moves)
-        quick_sort(arr, pivot_idx + 1, high, comps, moves)
+        quick_sort(arr, low, pivot_idx - 1)
+        quick_sort(arr, pivot_idx + 1, high)
     return comps, moves
+
+
+arr = []
+comps = 0
+moves = 0
+for i in range(1000):
+    arr.append(i)
+print("%d %d\n" % selection_sort(arr))
+arr = []
+comps = 0
+moves = 0
+for i in range(1000):
+    arr.append(1000 - i)
+print("%d %d\n" % selection_sort(arr))
