@@ -2,12 +2,12 @@ def insertion_sort(arr, comps, moves):
     for j in range(1, len(arr)):
         temp = arr[j]
         i = j - 1
+        comps += 1
         while i >= 0 and temp < arr[i]:
             arr[i + 1] = arr[i]
-            moves += 1
             i -= 1
+            moves += 1
         arr[i + 1] = temp
-    comps = j
 
     return comps, moves
 
