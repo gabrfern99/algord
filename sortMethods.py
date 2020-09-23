@@ -77,7 +77,6 @@ def partition(arr, low, high):
             arr[j], arr[i] = arr[i], arr[j]
             moves += 1
     arr[i + 1], arr[high] = arr[high], arr[i + 1]
-    moves += 1
     return i + 1, comps, moves
 
 def quick_sort(arr, low, high):
