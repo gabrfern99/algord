@@ -9,7 +9,8 @@ $ git clone git@github.com:gabrfern99/algord.git
 2. $python3 algord.py;
 3. O programa pedirá o caminho (Path) do arquivo;
     1. Os arquivos de teste estão dentro do diretório datasets;
-    2. Passe o caminho relativo. Exemplo: datasets/1000/crescente.csv;
+    2. Passe o caminho relativo - ou absoluto, se preferir.
+    Exemplo: datasets/1000/crescente.csv;
 4. O programa pedirá que você escolha o algorítmo de ordenação.
 Digite um número entre 1 e 4;
 5. O programa executará a ordenação do arquivo passado com o algoritmo escolhido.
