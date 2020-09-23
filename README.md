@@ -6,7 +6,7 @@ $ git clone git@github.com:gabrfern99/algord.git
 
 ## Execução
 1. Vá para o diretório do projeto;
-2. $python3 algord.py;
+2. $ python3 algord.py;
 3. O programa pedirá o caminho (Path) do arquivo;
     1. Os arquivos de teste estão dentro do diretório datasets;
     2. Passe o caminho relativo - ou absoluto, se preferir.
@@ -17,5 +17,5 @@ Digite um número entre 1 e 4;
 
 ## Extra
 Caso você queira apenas os resultados numéricos e não queira ver a lista
-ordenada, use o script generate_results.zsh. Ele gerará um arquivo chamado
-results com todos os valores gerados.
+ordenada, use o script *generate_results.zsh*. Ele gerará um arquivo chamado
+*results* com todos os valores gerados.
