@@ -19,3 +19,5 @@ Digite um número entre 1 e 4;
 Caso você queira apenas os resultados numéricos e não queira ver a lista
 ordenada, use o script *generate_results.zsh*. Ele gerará um arquivo chamado
 *results* com todos os valores gerados.
+*OBS: Embora o programa rode em múltiplos sistemas operacionais, o script executa
+apenas no Z shell - zsh.*
