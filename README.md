@@ -2,8 +2,7 @@
 ## Estrutura de Dados II - Universidade Federal de Goiás
 
 ## Download:
-$ git clone git@github.com:gabrfern99/algord.git
-
+$ git clone https://github.com/gabrfern99/algord
 ## Execução
 1. Vá para o diretório do projeto;
 2. $ python3 algord.py;
